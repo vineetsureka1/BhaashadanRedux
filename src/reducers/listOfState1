@@ -1,0 +1,44 @@
+const initialState=[]
+ const listOfStateReducer= (state=initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+
+      case LOGIN_SUCCESS:
+            return {...state,
+                  listOfObject:[{selectedObject:{selectedLanguage:payload.user.languages[0],selectedWorkType:"Pending",results:[]}}],
+                  selectedObject:{selectedLanguage:payload.user.languages[0],selectedWorkType:"Pending",results:[]}
+                      //  selectedLanguage:payload.user.language[0],
+                       // selectedWorkType:"Pending",
+                      //  Data:{}
+    
+                  
+            }
+      case SETWORKTYPE:
+            return {...state,
+                  
+                  listOfObject:[...state.listOfObject,state.selectedObject],
+                  selectedObject:payload.alreadyExists?
+                  [...state.listOfObject.filter((obj)=>(obj.selectedLanguage.key==payload.selectedLanguage.key && obj.selectedWorkType==payload.selectedWorkType))].reduce((obj1, item) => (obj1[item.key] = item.value, obj1) ,{})
+                  :
+                 {}  
+                      
+            };  
+      case SETLANGUAGE:
+       return   {...state,
+                  
+            listOfObject:[...state.listOfObject,state.selectedObject],
+            selectedObject:payload.alreadyExists?
+                  [...state.listOfObject.filter((obj)=>(obj.selectedLanguage.key==payload.selectedLanguage.key && obj.selectedWorkType==payload.selectedWorkType))].reduce((obj1, item) => (obj1[item.key] = item.value, obj1) ,{})
+                  :
+                  {   
+                      }
+      };   
+      // case SETWORKTYPE:
+      //  return {...state,selectedWorkType:payload.selectedWorkType};
+      
+ default:
+  return state;
+}  
+};
+
+export default listOfStateReducer

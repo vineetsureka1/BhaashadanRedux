@@ -1,0 +1,21 @@
+in the package.json
+
+add
+
+"homepage": "/path/to/subfolder"
+before name.
+
+after that execute the below command
+
+npx expo export:web
+
+after that there will be folder created with name
+
+web-build
+
+point the url to this folder in the ngix server
+
+
+for more details refer (webpack one)
+
+https://docs.expo.dev/distribution/publishing-websites/
