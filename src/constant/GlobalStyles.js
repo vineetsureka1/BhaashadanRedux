@@ -192,6 +192,7 @@ export default StyleSheet.create({
         color:'black',
        // flexWrap:'wrap',
       overflow:'auto' ,
+      marginHorizontal:'10px',
         
     },
     homeHeading:{
@@ -209,27 +210,48 @@ export default StyleSheet.create({
       lineHeight:'29.26px',
       fontFamily: 'Lato',
       fontWeight:'400',
-        
+      textAlign:'justify',
+     // justify:'right',
+     // marginHorizontal:'10px',
     },
     homeLeftContainer:{
       //  backgroundColor:Colors.HomeColor,
         flex:1,
+        flexDirection:'row',
         fontFamily: 'Montserrat',
+        marginHorizontal:'20px',
+        alignItems:'flex-end',
+        justifyContent:'flex-start',
        // overflow:'scroll',
-       //justifyContent:'flex-start',
+     //  alignContent:'center',
+      // marginHorizontal:'20px',
+      // justifyContent:'center',
       // overflow:'auto',
     },
     homeRightContainer:{
       //  backgroundColor:Colors.HomeColor,
         flex:1,
+        flexDirection:'row',
         overflow:'auto',
+        marginHorizontal:'20px',
+        alignItems:'flex-start',
+
+        justifyContent:'flex-end',
         
     },
     linkStyle:{
       color:Colors.LoginHeaderText, 
       marginHorizontal:'10px',
-      fontFamily:'Lato',
-      fontSize:'34px'}
+      fontSize:'24px',
+      fontFamily:'lato',
+      
+      
+      
+    },
+    textStyle:{
+      color:Colors.LoginHeaderText, 
+      
+    }
       
   });                        
   

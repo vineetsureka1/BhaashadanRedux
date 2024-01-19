@@ -4,6 +4,6 @@ import styles from "./../constant/GlobalStyles";
 
 
 const Logo=()=>{
-    return(<Image style={styles.logo} source={require("./../assets/iiitnew.png")} />)
+    return(<Image style={styles.logo} source={require("./../assets/logo.png")} />)
 }
 export default Logo

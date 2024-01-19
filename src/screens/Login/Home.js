@@ -58,7 +58,7 @@ const Home=(props)=>{
       <ImageBackground source={require('../../assets/bgImage.png')} resizeMode="cover" style={Styles.backGroundImageStyle}>
           <View style={Styles.homeContainer} >
             
-              <View>
+              
               <Logo />
               <View style={Styles.homeButtonContainer}>
               <Text style={[Styles.button,Styles.textWhite]} onPress={()=>handleRegister({...props,"isCreate":true})}>Register</Text>
@@ -71,10 +71,9 @@ const Home=(props)=>{
                 <View style={Styles.homeLeftContainer} >
                 
                   <Text style={Styles.homeTextContent}>
-                    
-              <center></center>    
-              <Text style={Styles.linkStyle}> Come join us</Text> in building
-the largest collection of <Text style={Styles.linkStyle}>
+           
+              <Text style={Styles.textStyle}>Come join us</Text> in building
+the largest collection of <Text style={Styles.textStyle}>
    handwritten</Text> documents
 in Indian Languages.
 
@@ -92,20 +91,21 @@ in Indian Languages.
                 </View>
                 
               </View>
-              <View style={{flexDirection:'row'}}>
-                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('/test.html')}>
+             
+              <View style={{flexDirection:'row',marginHorizontal:'10px',flex:1}}>
+                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('https:google.com')}>
                 Connect with us
                 </Text>
-                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('/test.html')}>
+                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('https:google.com')}>
                 FAQ
                 </Text>
-                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('/test.html')}>
+                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('https:google.com')}>
                 Terms and Conditions
                 </Text>
                 </View>
               </View>
               
-          </View>
+          
           </ImageBackground>
         );                    
 }
