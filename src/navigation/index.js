@@ -17,6 +17,8 @@ import { initialize } from "../actions/fetch";
 import { useState } from "react";
 import { onLoad as loginAction } from "./../actions/auth";
 import Faq from '../screens/Login/Faq'
+import ContactUs from '../screens/Login/ContactUs'
+import TermsAndCondition from '../screens/Login/TermsAndCondition'
 //import UserDashboard from "../screens/User/OldUserDashboard";
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +26,18 @@ var initialRouteName='Home';
 
 const NavigationProvider = (props) => {
   const [cookies, setCookie] = useCookies(['bhaashadan']);
-   //alert("home props"+JSON.stringify(props));
+  // alert("home props"+JSON.stringify(props));
+   
+   if(props.location.pathname=="/")
+{
+  initialRouteName='Home';
+}
+else
+{
+  initialRouteName=props.location.pathname.substring(1);
+ // alert(initialRouteName);
+}
+
    const dispatch = useDispatch();
    var params1={...props};
    if(cookies && cookies.bhaashadan && cookies.bhaashadan.user)
@@ -40,6 +53,18 @@ const NavigationProvider = (props) => {
     <Stack.Screen
         name="Faq"
         component={Faq}
+        options={{ headerShown: false }}
+        {...props}
+      />
+      <Stack.Screen
+        name="ContactUs"
+        component={ContactUs}
+        options={{ headerShown: false }}
+        {...props}
+      />
+      <Stack.Screen
+        name="TermsAndCondition"
+        component={TermsAndCondition}
         options={{ headerShown: false }}
         {...props}
       />

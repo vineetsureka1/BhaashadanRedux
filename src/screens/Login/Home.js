@@ -16,8 +16,7 @@ import homeVideo from "../../../assets/video/home.mp4";
 import Colors from '../../constant/color';
 
 //const image = {require("./../assets/iiitnew.png")};
-const MY_URL = 'https://www.kindacode.com';
-const MY_TEXT = 'The Beautiful Link';
+
 
 const handleCookie=(props)=>{
   const dispatch = useDispatch();
@@ -93,13 +92,13 @@ in Indian Languages.
               </View>
              
               <View style={{flexDirection:'row',marginHorizontal:'10px',flex:1}}>
-                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('https:google.com')}>
+                <Text style={Styles.linkStyle} onPress={() => window.open('/ContactUs')}>
                 Connect with us
                 </Text>
-                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('https:google.com')}>
+                <Text style={Styles.linkStyle} onPress={() =>window.open('/Faq')}>
                 FAQ
                 </Text>
-                <Text style={Styles.linkStyle} onPress={() => Linking.openURL('https:google.com')}>
+                <Text style={Styles.linkStyle} onPress={() => window.open('/TermsAndCondition')}>
                 Terms and Conditions
                 </Text>
                 </View>
